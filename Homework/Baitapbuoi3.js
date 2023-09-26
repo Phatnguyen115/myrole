@@ -73,4 +73,4 @@ function fibo(n){
 
 }
 
-fibo(10);
+fibo(8);

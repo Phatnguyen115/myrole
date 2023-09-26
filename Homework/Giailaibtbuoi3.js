@@ -92,4 +92,4 @@ for ( i = 3; i<=n; i++);
 	f2 = fn;
 }
 }
-fibo(3);
+fibo(5);
