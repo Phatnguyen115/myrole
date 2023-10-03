@@ -71,25 +71,52 @@ if (nguyento){
 }
 nguyento(5);
 
+
+
+
 //BT 11
-function fibo(n);
-{if (n==1) {
-	console.log("1");
-	return;
+function fibo(n) {
+    if (n <= 1) {
+        return n;
+    } else {
+        return fibo(n - 1) + fibo(n - 2);
+    }
 }
-if (n==2) {
-	console.log("1");
-	console.log("1");
-	return;
+
+function Insofibo(a) {
+    for ( i = 0; i < a; i++) {
+        console.log(fibo(i));
+    }
 }
-f1 = 1;
-f2 = 1;
-fn = 0;
-for ( i = 3; i<=n; i++);
-{	fn = f1 + f2;
-	console.log(fn);
-	f1 = f2;
-	f2 = fn;
+
+Insofibo(10);
+
+//BT12
+function kiemtranguyento(n){
+	for(i=1; i<=2000; i++){
+		if(n % i != 0 ) {
+			console.log(i);
+		} 
+	}
 }
-}
-fibo(5);
+
+function kiemtranguyento(n) {
+	// Kiểm tra xem n có phải là số nguyên tố hay không
+	for ( i = 2; i <= 2000; i++) {
+	  if (n % i === 0) {
+		return false;
+	  }
+	}
+  
+	return true;
+  }
+  
+  for ( i = 2; i <= 2000; i++) {
+	if (kiemtranguyento(i)) {
+	  console.log(i);
+	}
+  }
+  
+
+  console.log("hello");
+  
