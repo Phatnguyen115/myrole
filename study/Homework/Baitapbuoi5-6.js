@@ -140,7 +140,58 @@ console.log("Tổng của mảng là: "+ tongbt33);
 console.log("Tích của mảng là: "+ tichbt33);
 console.log("Trung bình cộng của mảng là: "+ (tongbt33/(arr33.length)));
 
+//BT34
+var arr34 = [8,3,6,5,9,7,4];
+var maxarr34 = arr34[0];
+var minarr34 = arr34[0];
+for(i= 0;i<arr34.length;i++){
+    if(arr34[i]>maxarr34){
+        maxarr34 = arr34[i];
+    } else {}
+    if(arr34[i]<minarr34){
+        minarr34 = arr34[i]
+    } else {}
+}
+console.log( "Số lớn nhất của mảng là: "+  maxarr34);
+console.log( "Số nhỏ nhất của mảng là: "+ minarr34);
 
+//Nên chọn giá trị để so sánh ban đầu là arr[0]
 
+//BT35
+var arr35 = [3,4,5,3,6,7,8];
+solantrung = 0;
+for(i=0;i<arr35.length;i++){
+    if(arr35[i] == 3){
+        solantrung +=1;
+    } else {}
+}
+console.log("Số lần lặp lại của số 3 là: "+ solantrung);
+
+//BT37
+var arr37 = [2,4,6,7,9,11,15,19];
+function songuyento(a){
+    if(a< 2){
+        return false;
+    }
+    if (a == 2){
+        return true;
+    } 
+
+    for(var i=2;i<=Math.sqrt(a);i++){
+        if(a%i==0){
+            return false;
+        }
+    }
+    return true;
+}
+var songuyentoarr37 = [];
+    for(i=0;i<arr37.length;i++){
+        if(songuyento(arr37[i])){
+            songuyentoarr37.push(arr37[i]);
+        } else {}
+    }
+    console.log(songuyentoarr37);
+
+//Lỗi code tìm số nguyên tố: Tại vòng lặp bỏ chữ else, nếu ko sẽ ko ra kết quả gì, từ đó dẫn đến tìm số nguyên tố cũng bị sót
 
 
