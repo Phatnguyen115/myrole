@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <title>Đồng hồ bấm giờ</title>
+        <link rel="icon" type="image/x-icon" href="C:/Users/ACER/Desktop/Hoc-lap-trinh/Hoc-Javascript/Lib/hourglass.png">
+        <!-- <link rel="stylesheet" href="Baitapbuoi10.js"> -->
+        <style>
+             .nut1 {
+                background-color: green;
+                text-align: center;
+                font-size: 20px;
+                color: white;
+                margin-bottom: 10px;
+            }
+            .nut2{
+                background-color: red;
+                text-align: center;
+                font-size: 20px;
+                color: white;
+                margin-bottom: 10px;
+            }
+            .nut3{
+                background-color: rgb(0, 21, 255);
+                text-align: center;
+                font-size: 20px;
+                color: white;
+                margin-bottom: 10px;
+            }
+
+        </style>
+    </head>
+    <body>
+       <div class="BT1">
+        <h2>ĐỒNG HỒ CƠ BẢN</h2>
+        <h1 id ="donghohientai" >00:00:00</h1>
+       </div>
+        <div class="BT2">
+            <H2>ĐỒNG HỒ BẤM GIỜ</H2>
+            <h1 id ="donghobamgio" >00:00:00</h1>
+            <button class = "nut1" onclick="start()">Bắt đầu</button> <br>
+            <button class = "nut2" onclick="stop()">Dừng</button> <br>
+            <button class = "nut3" onclick="record()">Vòng</button>
+        </div>
+        <div id = "ghilaitime" >Vòng </div>
+
+        
+        <script>
+            var p = setInterval(Timewindows,1000);
+            function Timewindows(){
+                document.getElementById("donghohientai").innerHTML = new Date().toLocaleTimeString();
+            };
+            function addzero(a){
+                if(a<10){return "0"+ a;
+
+                } else {return a};
+            };
+            var i = 0;
+            function demtangdan(){
+                i = i +1;
+            document.getElementById("donghobamgio").innerHTML = addzero(Math.floor(i/3600)) + ":"
+            + addzero(Math.floor((i%3600)/60)) + ":"
+            + addzero(i - Math.floor(i/3600)*3600 - Math.floor((i%3600)/60)*60);
+            };
+            
+            function start(){
+                p = setInterval(demtangdan,1000);
+            };
+            function stop(){
+                clearInterval(p);
+            };
+            var recordtime = document.getElementById("ghilaitime");
+
+            function record(){
+                var ghitime = document.createElement("p");
+                ghitime.innerHTML = demtangdan();
+                recordtime.appendChild(ghitime);
+            }
+        </script>
+    </body>
+</html>
